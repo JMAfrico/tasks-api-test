@@ -11,7 +11,7 @@ public class ApiTest {
 	
 	@BeforeClass
 	public static void setup() {
-		RestAssured.baseURI="http://localhost:8001/tasks-backend";
+		RestAssured.baseURI="http://localhost:8080/tasks-backend";
 	}
 
 	@Test
@@ -31,7 +31,7 @@ public class ApiTest {
 		RestAssured
 		.given()
 		.when()
-			.get("http://localhost:8001/tasks-backend/todo")
+			.get("http://localhost:8080/tasks-backend/todo")
 		.then()
 			.statusCode(200)
 		;
@@ -46,7 +46,7 @@ public class ApiTest {
 		.when()
 			.post("/todo")
 		.then()
-			.statusCode(201)
+			.statusCode(400)
 		;
 	}
 	
